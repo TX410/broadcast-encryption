@@ -7,7 +7,7 @@
 */
 
 #include <string.h>
-#include "pbc.h"
+#include <pbc/pbc.h>
 
 
 /* **********************************************************
