@@ -19,7 +19,7 @@ int main(void)
   //Global Setup
   Setup_global_broadcast_params(&gbs, N, "d201.param");
 
-  if(1 && DEBUG) {
+  if(DEBUG) {
     printf("\ng = ");
     element_out_str(stdout, 0, gbs->g);
     printf("\nh = ");
@@ -48,7 +48,7 @@ int main(void)
   Get_priv_key(gbs, sys, 2, &mykey3);
   //if(DEBUG) printf("done 3\n");
 
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("\ng_i = ");
     element_out_str(stdout, 0, mykey.g_i);
     printf("\nh_i = ");
@@ -168,30 +168,30 @@ int main(void)
   */
 
   Gen_decr_prod_from_bitvec(gbs, 2, recip, &mykey);
-  //if(DEBUG && 0) printf("\ndone 1 decr\n");
+  //if(DEBUG) printf("\ndone 1 decr\n");
   Gen_decr_prod_from_bitvec(gbs, 2, recip, &mykey2);
-  //if(DEBUG && 0) printf("\ndone 2 decr\n");
+  //if(DEBUG) printf("\ndone 2 decr\n");
   Gen_decr_prod_from_bitvec(gbs, 2, recip, &mykey3);
-  //if(DEBUG && 0) printf("\ndone 3 decr\n");
+  //if(DEBUG) printf("\ndone 3 decr\n");
   //Gen_decr_prod_from_indicies(gbs, 2, in_recip, num_recip, &mykey2);
   //Change_decr_prod_indicies(gbs, 2, adds, N_adds, rems, N_rems, &mykey2);
 
   //Gen_decr_prod_from_bitvec(gbs, 2, recip, &mykey3);
 
 
-  if(0 && DEBUG) {
+  if(DEBUG) {
     printf("\n");
     printf("mykey1 decr_product = ");
     element_out_str(stdout, 0, mykey.decr_prod);
     printf("\n");
   }
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("\n");
     printf("mykey2 decr_product = ");
     element_out_str(stdout, 0, mykey2.decr_prod);
     printf("\n");
   }
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("\n");
     printf("mykey3 decr_product = ");
     element_out_str(stdout, 0, mykey3.decr_prod);

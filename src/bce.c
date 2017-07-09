@@ -448,7 +448,7 @@ void BroadcastKEM_using_bitvec(global_broadcast_params_t gbp,
 {
 
   Gen_encr_prod_from_bitvec(gbp, sys, recip);
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("bitvec product = ");
     element_out_str(stdout, 0, sys->encr_prod);
     printf("\n");
@@ -461,7 +461,7 @@ void BroadcastKEM_using_indicies(global_broadcast_params_t gbp,
          int *in_recip, int num_recip, element_t key)
 {
   Gen_encr_prod_from_indicies(gbp, sys, in_recip, num_recip);
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("index product = ");
     element_out_str(stdout, 0, sys->encr_prod);
     printf("\n");
@@ -507,14 +507,14 @@ void BroadcastKEM_using_product(global_broadcast_params_t gbp,
   element_pow_zn(myct->C0, gbp->h, t);
 
   //COMPUTE C1
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("\npub_key = ");
     element_out_str(stdout, 0, sys->pub_key);
     printf("\nencr_prod = ");
     element_out_str(stdout, 0, sys->encr_prod);
   }
   element_mul(myct->C1, sys->pub_key, sys->encr_prod);
-  if(DEBUG && 0) {
+  if(DEBUG) {
     printf("\npub_key = ");
     element_out_str(stdout, 0, sys->pub_key);
     printf("\nencr_prod = ");
@@ -617,10 +617,10 @@ void Gen_decr_prod_from_indicies(global_broadcast_params_t gbp, int receiver,
       return;
     }
     if(incl_num == receiver) {
-      if(DEBUG && 0) printf("incl_num == receiver, continuing\n");
+      if(DEBUG) printf("incl_num == receiver, continuing\n");
       continue;
     }
-    if(DEBUG && 0) printf("\nputting element %d in product",incl_num);
+    if(DEBUG) printf("\nputting element %d in product",incl_num);
     if(!already_set) {
       element_set(mykey->decr_prod, gbp->gs[(n-incl_num)+receiver]);
       already_set = 1;
@@ -677,7 +677,7 @@ void Gen_decr_prod_from_bitvec(global_broadcast_params_t gbp,
     element_mul(mykey->decr_prod, mykey->decr_prod,
           gbp->gs[(n-main_index)+receiver]);
   }
-  if(0 && DEBUG)
+  if(DEBUG)
     printf("added index = %d\n", main_index);
       }
       main_index++;
@@ -785,7 +785,7 @@ void Gen_encr_prod_from_indicies(global_broadcast_params_t gbp,
     printf("only give me valid values.  i die.\n");
     return;
   }
-  if(DEBUG && 0) printf("\nputting element %d in product",incl_num);
+  if(DEBUG) printf("\nputting element %d in product",incl_num);
   element_set(sys->encr_prod, gbp->gs[n-incl_num]);
   for(i = 1; i < num_recip; i++) {
     incl_num = in_recip[i];
@@ -794,7 +794,7 @@ void Gen_encr_prod_from_indicies(global_broadcast_params_t gbp,
       printf("only give me valid values.  i die.\n");
       return;
     }
-    if(DEBUG && 0) printf("\nputting element %d in product",incl_num);
+    if(DEBUG) printf("\nputting element %d in product",incl_num);
     element_mul(sys->encr_prod, sys->encr_prod, gbp->gs[n-incl_num]);
   }
 }
