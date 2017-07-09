@@ -297,8 +297,15 @@ void LoadParams(char *systemFileName,
     printf("ACK! couldn't open %s  I die\n", p->pairFileName);
     return;
   }
-  pairing_init_inp_str(p->pairing, params);
+  //pairing_init_inp_str(p->pairing, params);
+  //fclose(params);
+  char s_temp[2048];
+  size_t count = fread(s_temp, 1, 2048, params);
   fclose(params);
+  if(!count)
+    pbc_die("input error");
+  if(pairing_init_set_buf(p->pairing, s_temp, count))
+    pbc_die("pairing init failed");
 
   //restore num_users
   fread(&(p->num_users),4,1, sysp);
@@ -390,11 +397,13 @@ void DecryptKEM_using_product(global_broadcast_params_t gbp,
   element_init(temp3, gbp->pairing->GT);
 
   //Generate the numerator
-  bilinear_map(temp, myct->C1, mykey->h_i, gbp->pairing);
+  //bilinear_map(temp, myct->C1, mykey->h_i, gbp->pairing);
+  pairing_apply(temp, myct->C1, mykey->h_i, gbp->pairing);
   //G1 element in denom
   element_mul(di_de, mykey->g_i_gamma, mykey->decr_prod);
   //Generate the denominator
-  bilinear_map(temp2, di_de, myct->C0, gbp->pairing);
+  //bilinear_map(temp2, di_de, myct->C0, gbp->pairing);
+  pairing_apply(temp2, di_de, myct->C0, gbp->pairing);
   //Invert the denominator
   element_invert(temp3, temp2);
 
@@ -490,7 +499,8 @@ void BroadcastKEM_using_product(global_broadcast_params_t gbp,
   element_init(myct->C1, gbp->pairing->G1);
 
   //COMPUTE K
-  bilinear_map(key, gbp->gs[gbp->num_users-1], gbp->hs[0], gbp->pairing);
+  //bilinear_map(key, gbp->gs[gbp->num_users-1], gbp->hs[0], gbp->pairing);
+  pairing_apply(key, gbp->gs[gbp->num_users-1], gbp->hs[0], gbp->pairing);
   element_pow_zn(key, key, t);
 
   //COMPUTE C0
@@ -904,8 +914,15 @@ void Setup_global_broadcast_params(global_broadcast_params_t *sys,
     return;
   }
 
-  pairing_init_inp_str(gbs->pairing, curveFile);
+  //pairing_init_inp_str(gbs->pairing, curveFile);
+  //fclose(curveFile);
+  char s[2048];
+  size_t count = fread(s, 1, 2048, curveFile);
   fclose(curveFile);
+  if(!count)
+    pbc_die("input error");
+  if(pairing_init_set_buf(gbs->pairing, s, count))
+    pbc_die("pairing init failed");
 
   gbs->num_users = num_users;
   element_t *lgs;
