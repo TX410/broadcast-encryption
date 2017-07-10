@@ -6,9 +6,15 @@
    bce.h
 */
 
+#ifndef PBC_BCE_H
+#define PBC_BCE_H
+
 #include <string.h>
 #include <pbc/pbc.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* **********************************************************
    DEBUG having the debug flag turned on spews out lots of
@@ -283,4 +289,8 @@ void Decrypt_BC_KEM_using_indicies(global_broadcast_params_t gbp,
            ct_t myct, int *in_recip,
            int num_recip);
 
+#ifdef __cplusplus
+}
+#endif
 
+#endif // PBC_BCE_H
