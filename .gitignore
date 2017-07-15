@@ -1,5 +1,5 @@
 # Compiled python code
-.pyc
+*.pyc
 
 # Dot-hidden on Unix-like systems
 .waf-*-*/
