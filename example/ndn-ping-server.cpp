@@ -20,9 +20,6 @@
  * @author Jerald Paul Abraham <jeraldabraham@email.arizona.edu>
  */
 
-#include "core/common.hpp"
-#include "core/version.hpp"
-
 #include "ping-server.hpp"
 #include "tracer.hpp"
 
@@ -155,7 +152,7 @@ main(int argc, char* argv[])
     }
 
     if (optVm.count("version") > 0) {
-      std::cout << "ndnpingserver " << tools::VERSION << std::endl;
+      //std::cout << "ndnpingserver " << tools::VERSION << std::endl;
       exit(0);
     }
 

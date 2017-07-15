@@ -23,7 +23,7 @@
 #ifndef NDN_TOOLS_PING_SERVER_PING_SERVER_HPP
 #define NDN_TOOLS_PING_SERVER_PING_SERVER_HPP
 
-#include "core/common.hpp"
+#include "../common.hpp"
 
 namespace ndn {
 namespace ping {

@@ -20,9 +20,6 @@
  * @author: Eric Newberry <enewberry@email.arizona.edu>
  */
 
-#include "core/common.hpp"
-#include "core/version.hpp"
-
 #include "ping.hpp"
 #include "statistics-collector.hpp"
 #include "tracer.hpp"
@@ -200,7 +197,7 @@ main(int argc, char* argv[])
     }
 
     if (optVm.count("version") > 0) {
-      std::cout << "ndnping " << tools::VERSION << std::endl;
+      //std::cout << "ndnping " << tools::VERSION << std::endl;
       exit(0);
     }
 

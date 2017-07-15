@@ -23,7 +23,7 @@
 #ifndef NDN_TOOLS_PING_CLIENT_TRACER_HPP
 #define NDN_TOOLS_PING_CLIENT_TRACER_HPP
 
-#include "core/common.hpp"
+#include "../common.hpp"
 
 #include "ping.hpp"
 

@@ -24,7 +24,7 @@
 #ifndef NDN_TOOLS_PING_CLIENT_STATISTICS_COLLECTOR_HPP
 #define NDN_TOOLS_PING_CLIENT_STATISTICS_COLLECTOR_HPP
 
-#include "core/common.hpp"
+#include "../common.hpp"
 
 #include "ping.hpp"
 
