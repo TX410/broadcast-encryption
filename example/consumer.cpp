@@ -20,7 +20,7 @@
  * @author: Eric Newberry <enewberry@email.arizona.edu>
  */
 
-#include "ping.hpp"
+#include "ndn-consumer-bce.hpp"
 #include "statistics-collector.hpp"
 #include "tracer.hpp"
 

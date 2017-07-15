@@ -24,7 +24,7 @@
 
 #include "../common.hpp"
 
-#include "ping-server.hpp"
+#include "ndn-producer-bce.hpp"
 
 namespace ndn {
 namespace ping {

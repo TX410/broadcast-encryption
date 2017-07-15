@@ -21,7 +21,7 @@
  * @author: Teng Liang <philoliang@email.arizona.edu>
  */
 
-#include "ping.hpp"
+#include "ndn-consumer-bce.hpp"
 #include <ndn-cxx/util/random.hpp>
 
 namespace ndn {

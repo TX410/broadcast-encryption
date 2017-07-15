@@ -20,7 +20,7 @@
  * @author Jerald Paul Abraham <jeraldabraham@email.arizona.edu>
  */
 
-#include "ping-server.hpp"
+#include "ndn-producer-bce.hpp"
 
 namespace ndn {
 namespace ping {

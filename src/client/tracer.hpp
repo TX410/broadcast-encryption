@@ -25,7 +25,7 @@
 
 #include "../common.hpp"
 
-#include "ping.hpp"
+#include "ndn-consumer-bce.hpp"
 
 namespace ndn {
 namespace ping {
