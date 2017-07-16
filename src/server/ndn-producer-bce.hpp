@@ -20,8 +20,8 @@
  * @author Jerald Paul Abraham <jeraldabraham@email.arizona.edu>
  */
 
-#ifndef NDN_TOOLS_PING_SERVER_PING_SERVER_HPP
-#define NDN_TOOLS_PING_SERVER_PING_SERVER_HPP
+#ifndef NDN_BCE_PRODUCER_HPP
+#define NDN_BCE_PRODUCER_HPP
 
 #include "../common.hpp"
 
@@ -122,4 +122,4 @@ private:
 } // namespace ping
 } // namespace ndn
 
-#endif //NDN_TOOLS_PING_SERVER_PING_SERVER_HPP
+#endif //NDN_BCE_PRODUCER_HPP

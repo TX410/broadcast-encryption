@@ -21,8 +21,8 @@
  * @author: Teng Liang <philoliang@email.arizona.edu>
  */
 
-#ifndef NDN_TOOLS_PING_CLIENT_PING_HPP
-#define NDN_TOOLS_PING_CLIENT_PING_HPP
+#ifndef NDN_BCE_CONSUMER_HPP
+#define NDN_BCE_CONSUMER_HPP
 
 #include "../common.hpp"
 
@@ -175,4 +175,4 @@ private:
 } // namespace ping
 } // namespace ndn
 
-#endif // NDN_TOOLS_PING_CLIENT_PING_HPP
+#endif // NDN_BCE_CONSUMER_HPP

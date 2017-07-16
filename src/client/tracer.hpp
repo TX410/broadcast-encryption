@@ -20,8 +20,8 @@
  * @author: Teng Liang <philoliang@email.arizona.edu>
  */
 
-#ifndef NDN_TOOLS_PING_CLIENT_TRACER_HPP
-#define NDN_TOOLS_PING_CLIENT_TRACER_HPP
+#ifndef NDN_BCE_CONSUMER_TRACER_HPP
+#define NDN_BCE_CONSUMER_TRACER_HPP
 
 #include "../common.hpp"
 
@@ -84,4 +84,4 @@ private:
 } // namespace ping
 } // namespace ndn
 
-#endif // NDN_TOOLS_PING_CLIENT_TRACER_HPP
+#endif // NDN_BCE_CONSUMER_TRACER_HPP

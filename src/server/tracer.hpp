@@ -19,8 +19,8 @@
  * @author Eric Newberry <enewberry@email.arizona.edu>
  */
 
-#ifndef NDN_TOOLS_PING_SERVER_TRACER_HPP
-#define NDN_TOOLS_PING_SERVER_TRACER_HPP
+#ifndef NDN_BCE_PRODUCER_TRACER_HPP
+#define NDN_BCE_PRODUCER_TRACER_HPP
 
 #include "../common.hpp"
 
@@ -53,4 +53,4 @@ private:
 } // namespace ping
 } // namespace ndn
 
-#endif // NDN_TOOLS_PING_SERVER_TRACER_HPP
+#endif // NDN_BCE_PRODUCER_TRACER_HPP
